@@ -21,16 +21,19 @@ import promiseAnime from '@exah/promise-animejs'
 
 const $nodes = document.querySelectorAll('.class-to-animate')
 
-const animations = Array.from($nodes).map(
-  $el => promiseAnime({
-    targets: $el,
-    opacity: [0, 1],
-    easing: 'easeOutCirc'
-  })
+const animations = Array.from($nodes).reduce(
+  (promise, $el) => promise.then(() => 
+    promiseAnime({
+      targets: $el,
+      opacity: [0, 1],
+      easing: 'easeOutCirc'
+    })
+  ),
+  Promise.resolve()
 )
 
 /* All animations is finished */
-Promise.all(animations)
+animations
   .then(() => console.log('complete'))
 ```
 
