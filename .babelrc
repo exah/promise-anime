@@ -1,4 +1,4 @@
 {
-  "presets": [ [ "es2015", { "modules": "commonjs" } ] ],
+  "presets": [ [ "es2015", { "modules": "umd" } ] ],
   "plugins": [ "transform-object-rest-spread" ]
 }
