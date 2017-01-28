@@ -1,6 +1,6 @@
 {
   "name": "@exah/promise-animejs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple wrapper around Anime.js, that resolves Promise when animation is complete",
   "main": "dist/index.js",
   "repository": "git@github.com:exah/promise-anime.git",
@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "babel -o dist/index.js src/index.js",
-    "prebuild": "test -d dist || mkdir dist"
+    "prebuild": "test -d dist || mkdir dist",
+    "prepublish": "npm run build"
   },
   "peerDependencies": {
     "animejs": "^1.1.3"
@@ -18,5 +19,8 @@
     "babel-core": "^6.22.1",
     "babel-plugin-transform-object-rest-spread": "^6.22.0",
     "babel-preset-es2015": "^6.22.0"
-  }
+  },
+  "files": [
+    "dist/index.js"
+  ]
 }
